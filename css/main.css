@@ -1,19 +1,311 @@
-/*
- * Lay this page out - make it responsive, use grid, flex, position and media queries where needed.
- *
- * Colors-
- * Green: #14a96d
- * White: #fff
- * Light gray: #f4f5f6
- * Border gray: #cfd7de
- * Dark text: #1b1f23
- * Lighter text: #66727c
- * Blue for links: #06748a
- * Blue for hovered links: #033641
- */
-
-/* Globals */
-body {
-  font-family: 'Cabin', sans-serif;
+body{
+    margin: 0;
 }
-
+.flex{
+    display: flex;
+}
+header{
+    justify-content: space-between;
+    border: 2px solid rgb(136, 136, 136);
+    align-items: center;
+    padding: 5px 0;
+}
+header .flex{
+    align-items: center;
+    padding: 5px 0;
+}
+.flex nav a{
+    color: black;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.flex>div img{
+    margin-right: 40px;
+    margin-left: 10px;
+}
+.mobile_menu{
+    display: none;
+    border: 1px solid rgb(136, 136, 136, 0.5);
+    margin-right: 20px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.mobile_menu div{
+    height: 5px;
+    width: 30px;
+    background-color: black;
+    margin: 5px
+}
+.hero__container{
+    position: relative;
+    background-image: url('../img/hero.jpg');
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.hero__container .content{
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(73, 73, 73);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding-left: 5px;
+}
+.hero__container .content a{
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    border: 2px solid rgb(1, 53, 1);
+    border-radius: 3px;
+    align-self: flex-start;
+    padding: 1% 30%;
+}
+/* .hero__container::before{
+    position: absolute;
+    background-color: rgb(2, 2, 2, 0.2);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+} */
+.grid{
+    display: grid;
+}
+.icon{
+    width: 100px;
+}
+.icon-2{
+    width: 40px;
+}
+.center{
+    align-items: center;
+    justify-content: center;
+}
+.facts__container h3{
+    font-weight: 900;
+    font-size: 25px;
+}
+.facts__container .grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
+    margin-right: 40px;
+}
+.facts__container .grid .box .item-1{
+    background-color: rgb(167, 167, 167);
+    justify-content: center;
+    border: 2px solid grey;
+    padding: 15px 0;
+}
+.facts__container .grid .box .item-1{
+    align-items: center;
+}
+.facts__container .grid .box .item-1 img{
+    margin-right: 20px;
+}
+.facts__container .grid .box .item-1 p{
+    font-weight: bold;
+}
+.facts__container .grid .box .item-2{
+    border: 2px solid grey;
+    border-top: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+}
+.facts__container .grid .box .item-2 ul li{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.facts__container .grid .box .item-2 a{
+    text-decoration: none;
+    font-weight: 600;
+    background-color: green;
+    color: white;
+    padding: 2% 20%;
+}
+.facts__container .grid .box .item-3{
+    text-align: center;
+}
+.facts__container .grid .box .item-3 p{
+    font-weight: bold;
+}
+.facts__container .grid .box .item-3 p:first-child{
+    margin-top: 30px;
+}
+.facts__container .grid .box .item-3 p .anchor{
+    text-decoration: underline;
+    color: blue;
+}
+.facts__container .display__mobile .grid{
+    display: none;
+}
+.action{
+    margin-top: 50px;
+    background-image: url('/img/lady-with-her-dogs.jpg');
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+}
+.action .content{
+    position: absolute;
+    background-color: white;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 20px;
+}
+.action .content>p:first-child{
+    background-color: green;
+    padding: 2px 2px;
+    margin-left: 1%;
+    margin-right: 90%;
+    border-radius: 5px;
+}
+.action .content .flex{
+    align-items: center;
+}
+.action .content .flex>a{
+    margin-left: 5px;
+    text-decoration: none;
+}
+.steps .grid{
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 40px;
+    gap: 50px;
+}
+.steps h3{
+    margin-top: 50px;
+    font-size: 30px;
+}
+.steps .grid img{
+    height: 150px;
+    margin-top: 70px;
+}
+.steps .grid [class^="item-"] .flex{
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.steps .grid [class^="item-"] .flex h3{
+    font-size: 25px;
+    margin-bottom: 0;
+}
+.steps .grid [class^="item-"] .flex p{
+    font-size: 20px;
+}
+@media (max-width: 480px){
+    .mobile_menu{
+        display: block;
+    }
+    header nav{
+        display: none;
+    }
+    .hero__container{
+        background-image: none;
+        height: 200px;
+    }
+    .hero__container .content{
+        width: 100%;
+        background-color: none;
+        padding: 0;
+    }
+    .hero__container .content h3{
+        margin-left: 5px;
+        font-weight: 900;
+    }
+    .hero__container .content a{
+        align-self: center;
+        content: none;
+        padding: 1% 10%;
+    }
+    .hero__container .content a::after{
+        content: " Discover Local Sitters";
+    }
+    .hero__container .content h1{
+        display: none;
+    }
+    .facts__container .grid{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        margin-right: 0;
+    }
+    .facts__container div h3{
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .facts__container .grid .box{
+        margin: 0 10px;
+    }
+    .facts__container .grid .box .item-1 img{
+        margin: 0 12px;
+    }
+    .icon-2{
+        width: 60px;
+    }
+    .facts__container .grid .box .item-2 a{
+        display: none;
+    }
+    .facts__container .grid .box .item-3{
+        display: none;
+    }
+    .facts__container .display__mobile{
+        margin: 0 5px;
+    }
+    .facts__container .display__mobile .grid{
+        grid-template-columns: repeat(2,1fr);
+        display: block;
+        text-align: center;
+    }
+    .icon-3{
+        width: 200px;
+    }
+    .action{
+        height: 200px;
+        width: 95%;
+        background-position: 20px -20px ;
+        background-repeat: no-repeat;
+    }
+    .action .content{
+        font-size: 8px;
+        left: 10%;
+        right: 35%;
+        top: -20px;
+        padding: 0 20px; 
+    }
+    .action .content #name{
+        margin: 0;
+        font-size: 15px;
+        font-weight: lighter;
+    }
+    .action .content .flex{
+        margin: 10px 0;
+    }
+    .action .content #name::before{
+        content: "- ";
+    }
+    .steps .grid{
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 10px;
+        gap: 0;
+    }
+    .steps .grid [class^="item-"]{
+        display: flex;
+        align-items: center;
+    }
+    .steps .grid [class^="item-"] img{
+        height: 80px;
+        margin-right: 10px;
+    }
+    .steps .grid .item-3{
+        margin-left: 10px;
+    }
+    .steps .grid .item-3 div img{
+        margin-right: 15px;
+    }
+}
