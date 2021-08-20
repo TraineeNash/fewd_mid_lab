@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header class="flex">
-        <div class="flex">
+        <div class="flex align_center">
             <div><img src="img/logo.png" width="150px" alt="logo"></div>
             <nav>
                 <a href="#">Search Sitters</a>
@@ -22,10 +23,19 @@
             <a href="#">Sign In</a>
             <a href="#">Help</a>
         </nav>
-        <div class="mobile_menu">
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="dropdown mobile_menu">
+            <button id="btn" class="dropbtn" style="font-size:24px">
+                <i class="fa fa-bars"></i>
+                <div id="nav" class="num"><a href="" class="">jeng1</a><a href="" class="">jeng2</a><a href="" class="">jeng3</a><a href="" class="">jeng4</a><a href="" class="">jeng5</a></div>
+            </button>
+            <div id="mydropdown" class="dropdown_content flex">
+                <a href="#">Search Sitters</a>
+                <a href="#">Become a Sitter</a>
+                <a href="#">Our Services</a>
+                <a href="#">Sign Up</a>
+                <a href="#">Sign In</a>
+                <a href="#">Help</a>
+            </div>
         </div>
     </header>
 
@@ -143,5 +153,6 @@
             </div>
         </div>
     </div>
+    <script src="/js/main.js"></script>
 </body>
 </html>
